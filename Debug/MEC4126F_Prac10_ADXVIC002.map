@@ -3839,7 +3839,7 @@ END GROUP
  .debug_frame   0x0000000000000b4c       0x20 /Applications/ARM/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-nano-msizer.o)
  .debug_frame   0x0000000000000b6c       0xb0 /Applications/ARM/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg_nano.a(lib_a-lock.o)
 
-.debug_str      0x0000000000000000    0x72a15
+.debug_str      0x0000000000000000    0x72a20
  *(.debug_str)
  .debug_str     0x0000000000000000    0x6b2b3 ./system/src/stm32f0-hal/stm32f0xx_hal.o
                                       0x6b550 (size before relaxing)
@@ -3869,9 +3869,9 @@ END GROUP
                                        0x37ad (size before relaxing)
  .debug_str     0x00000000000728fb       0x35 ./src/initialize-hardware.o
                                       0x6e567 (size before relaxing)
- .debug_str     0x0000000000072930       0xa8 ./src/main.o
-                                      0x6b00d (size before relaxing)
- .debug_str     0x00000000000729d8       0x3d ./src/stm32f0xx_hal_msp.o
+ .debug_str     0x0000000000072930       0xb3 ./src/main.o
+                                      0x6b018 (size before relaxing)
+ .debug_str     0x00000000000729e3       0x3d ./src/stm32f0xx_hal_msp.o
                                       0x6aedf (size before relaxing)
 
 .debug_loc      0x0000000000000000     0x1600
@@ -3924,7 +3924,7 @@ LOAD linker stubs
  .debug_ranges  0x0000000000000390       0x38 ./src/main.o
  .debug_ranges  0x00000000000003c8       0x28 ./src/stm32f0xx_hal_msp.o
 
-.debug_macro    0x0000000000000000    0x126ed
+.debug_macro    0x0000000000000000    0x126f3
  .debug_macro   0x0000000000000000      0x2aa ./system/src/stm32f0-hal/stm32f0xx_hal.o
  .debug_macro   0x00000000000002aa      0xa60 ./system/src/stm32f0-hal/stm32f0xx_hal.o
  .debug_macro   0x0000000000000d0a      0x193 ./system/src/stm32f0-hal/stm32f0xx_hal.o
@@ -4021,5 +4021,5 @@ LOAD linker stubs
  .debug_macro   0x0000000000011b5c      0x286 ./system/src/cmsis/system_stm32f0xx.o
  .debug_macro   0x0000000000011de2       0x34 ./system/src/cmsis/vectors_stm32f051x8.o
  .debug_macro   0x0000000000011e16      0x3cb ./src/initialize-hardware.o
- .debug_macro   0x00000000000121e1      0x286 ./src/main.o
- .debug_macro   0x0000000000012467      0x286 ./src/stm32f0xx_hal_msp.o
+ .debug_macro   0x00000000000121e1      0x28c ./src/main.o
+ .debug_macro   0x000000000001246d      0x286 ./src/stm32f0xx_hal_msp.o

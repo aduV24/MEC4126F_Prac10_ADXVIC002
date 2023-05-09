@@ -6,6 +6,7 @@
 // DEFINES AND INCLUDES-------------------------------------------------------|
 
 #include "stm32f0xx.h"
+#define STM32F051
 
 // GLOBAL VARIABLES ----------------------------------------------------------|
 
@@ -64,6 +65,7 @@ void init_ADC(void)
 void trigger_ADC_conversion(void)
 {
 	ADC1->CR |= ADC_CR_ADSTART;
+
 }
 
 /* Description:
@@ -88,6 +90,23 @@ uint16_t read_ADC_value(void)
 #if 0
 void init_timer_2(void)
 {
+	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN; //Enable Clock to Timer
+	RCC->AHBENR |= RCC_AHBENR_GPIOBEN; //Enable Clock for Port B
+	GPIOB->MODER |= GPIO_MODER_MODER10_1; // Set PB10 to alternate function for PWM wave
+	GPIOB->AFR[1] |= 0x02 << (2*4);
+	// Choose PSC as 4 and ARR as 640
+	TIM2->PSC = 4;
+	TIM2->ARR = 640;
+	TIM3->CCR3 = 0.25 * 640;
+	// PWM mode 1 and enable oc3 preload
+	TIM2->CCMR2 |= TIM_CCMR2_OC3M_2 | TIM_CCMR2_OC3M_1 | TIM_CCMR2_OC3PE;
+	// Select active high polarity
+	TIM2->CCER |= TIM_CCER_CC3E;
+	//Enable counter for timer3
+	TIM2->CR1 |= TIM_CR1_CEN;
+
+
+
 
 }
 #endif
